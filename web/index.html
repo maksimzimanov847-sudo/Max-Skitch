@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:">
+<title>Max Skitch</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="bar">
+  <button id="mic" class="mic" title="">
+    <svg viewBox="0 0 24 24" class="mic-svg" aria-hidden="true">
+      <rect x="9" y="3" width="6" height="11" rx="3"></rect>
+      <path d="M5.5 11.5a6.5 6.5 0 0 0 13 0"></path>
+      <path d="M12 18v3"></path>
+      <path d="M8.8 21h6.4"></path>
+    </svg>
+  </button>
+
+  <div class="info" id="info">
+    <div id="state" class="state">Готов</div>
+    <div class="meter"><div id="meterFill"></div></div>
+  </div>
+
+  <button id="gear" class="icon-btn" title="">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="3.2"></circle>
+      <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 7 19.4a1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.9H1a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 2.6 7a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 7 2.6h.1A1.7 1.7 0 0 0 8.3 1V1a2 2 0 1 1 4 0v.1A1.7 1.7 0 0 0 15 2.6a1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9v.1a1.7 1.7 0 0 0 1.6 1.2H23a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1.2z"></path>
+    </svg>
+  </button>
+</div>
+
+<div id="panel" class="panel">
+  <textarea id="ta" spellcheck="false"></textarea>
+  <div class="row">
+    <button id="bMain" class="btn primary">Записать</button>
+    <button id="bCont" class="btn">Продолжить</button>
+    <button id="bCopy" class="btn">Копировать</button>
+  </div>
+</div>
+
+<div id="settings" class="settings" hidden>
+  <div class="sheet">
+    <div class="field">
+      <label for="selMic" data-i18n="mic">Микрофон</label>
+      <select id="selMic"></select>
+    </div>
+
+    <div class="field">
+      <label for="rngVol"><span data-i18n="level">Уровень входа</span> <b id="lblVol">60%</b></label>
+      <input id="rngVol" type="range" min="0" max="100" step="1" value="60">
+    </div>
+
+    <div class="field">
+      <label data-i18n="model">Модель распознавания</label>
+      <div class="seg" id="segModel">
+        <button data-model="small" data-i18n="fast">Быстро (small)</button>
+        <button data-model="medium" data-i18n="exact">Точно (medium)</button>
+      </div>
+      <div id="hintModel" class="hint"></div>
+    </div>
+
+    <div class="field inline">
+      <label for="chkAuto" data-i18n="autoReplace">Заменять выделенное автоматически</label>
+      <input id="chkAuto" type="checkbox" class="switch" checked>
+    </div>
+
+    <div class="field grid2">
+      <div>
+        <label for="selLang" data-i18n="lang">Язык интерфейса</label>
+        <select id="selLang">
+          <option value="ru">Русский</option>
+          <option value="en">English</option>
+          <option value="uk">Українська</option>
+        </select>
+      </div>
+      <div>
+        <label for="selRec" data-i18n="recLang">Язык распознавания</label>
+        <select id="selRec">
+          <option value="ru">Русский</option>
+          <option value="en">English</option>
+          <option value="uk">Українська</option>
+          <option value="auto" data-i18n="autoLang">Определять сам</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="bApply" class="btn primary wide" data-i18n="apply">Готово</button>
+
+    <div class="foot">
+      <button id="bFolder" class="link" data-i18n="openFolder">Открыть папку программы</button>
+      <div id="paths" class="paths"></div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
