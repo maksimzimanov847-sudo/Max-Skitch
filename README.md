@@ -1,4 +1,7 @@
-# Max Skitch
+#MaxSkitch Write text with your voice! Don’t think!
+The program was created for people with disabilities and those for whom typing on a keyboard is difficult
+№№№
+A brief historical note. The author got bored, so he decided to create this app for people with disabilities. And in a couple of DAYS, using artificial intelligence, this program was created. And it’s still being improved.
 
 **English** · [Русский](README.ru.md) · [Українська](README.uk.md)
 
